@@ -1,10 +1,14 @@
 {
-    "development": {
-      "username": "fastparking_api_user",
-      "password": "fo0wk9osq6LfWF5PTJjbC3kDIZNPiofu",
-      "database": "fastparking_api",
-      "host": "dpg-cl0fv0rjdq6s73cikkjg-a",
-      "dialect": "postgres"
-    }
+  "development": {
+    "url": "postgres://fasparkingbd_user:F6t5VNxQwGgcu3vMBG2KxHdTizIsnNku@dpg-cl4d7c2uuipc738v9p80-a/fasparkingbd",
+    "dialect": "postgres"
+  },
+  "test": {
+    "url": "postgres://fasparkingbd_user:F6t5VNxQwGgcu3vMBG2KxHdTizIsnNku@dpg-cl4d7c2uuipc738v9p80-a/fasparkingbd",
+    "dialect": "postgres"
+  },
+  "production": {
+    "url": "postgres://fasparkingbd_user:F6t5VNxQwGgcu3vMBG2KxHdTizIsnNku@dpg-cl4d7c2uuipc738v9p80-a/fasparkingbd",
+    "dialect": "postgres"
   }
-  
+}
