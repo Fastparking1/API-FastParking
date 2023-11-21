@@ -75,6 +75,24 @@ app.get('/todos', async (req, res) => {
   }
 });
 
+app.delete('/excluir-cliente/:id', async (req, res) => {
+  const clienteId = req.params.id;
+
+  try {
+    const cliente = await Cliente.findByPk(clienteId);
+
+    if (!cliente) {
+      return res.status(404).json({ error: 'Cliente não encontrado' });
+    }
+
+    await cliente.destroy();
+    res.status(200).json({ message: 'Cliente excluído com sucesso' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao excluir cliente' });
+  }
+});
+
+
 app.listen(port, () => {
   console.log(`API rodando na porta ${port}`);
 });
