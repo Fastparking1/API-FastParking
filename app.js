@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(cors());
 
-const sequelize = new Sequelize('postgres://fasparkingbd_user:F6t5VNxQwGgcu3vMBG2KxHdTizIsnNku@dpg-cl4d7c2uuipc738v9p80-a/fasparkingbd', {
+const sequelize = new Sequelize('postgres://fastparkingdb_user:GMd30d1dDUJg1bMgomf8uU6xSLj2yR4X@dpg-cl53fo472pts739qnll0-a/fastparkingdb', {
   dialect: 'postgres',
 });
 
@@ -18,7 +18,7 @@ const Cliente = sequelize.define('Cliente', {
   sobrenome: DataTypes.STRING,
   sexo: DataTypes.STRING,
   sexoOutro: DataTypes.STRING,
-  nasci: DataTypes.DATE,
+  nasci: DataTypes.STRING,
   email: DataTypes.STRING,
   cpf: DataTypes.STRING,
   cnpj: DataTypes.STRING,
