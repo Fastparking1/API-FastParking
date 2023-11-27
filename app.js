@@ -94,17 +94,18 @@ app.delete('/excluir-cliente/:id', async (req, res) => {
   }
 });
 
-app.put('/atualizar-dados/:id', async (req, res) => {
-  const clienteId = req.params.id;
+// Alteração no endpoint /atualizar-dados
+app.put('/atualizar-dados', async (req, res) => {
+  const { id } = req.body; // Alteração para receber o ID do corpo da requisição
 
   try {
-    const cliente = await Cliente.findByPk(clienteId);
+    const cliente = await Cliente.findByPk(id);
 
     if (!cliente) {
       return res.status(404).json({ error: 'Cliente não encontrado' });
     }
 
-    // Atualize apenas o email, cnpj e nome_empresa
+    // Atualize os dados do cliente
     cliente.email = req.body.email || cliente.email;
     cliente.cnpj = req.body.cnpj || cliente.cnpj;
 
@@ -116,6 +117,7 @@ app.put('/atualizar-dados/:id', async (req, res) => {
     res.status(500).json({ error: 'Erro ao atualizar dados do cliente' });
   }
 });
+
 
 app.listen(port, () => {
   console.log(`API rodando na porta ${port}`);
