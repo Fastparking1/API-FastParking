@@ -29,6 +29,7 @@ const Cliente = sequelize.define('Cliente', {
   complemento: DataTypes.STRING,
   senha: DataTypes.STRING,
   confirmacao: DataTypes.STRING,
+  nome_empresa: DataTypes.STRING
 });
 
 app.post('/cadastro-cliente', async (req, res) => {
@@ -49,6 +50,7 @@ app.post('/cadastro-cliente', async (req, res) => {
       complemento: req.body.complemento,
       senha: req.body.senha, 
       confirmacao: req.body.confirmacao,
+      nome_empresa: DataTypes.STRING
     });
     res.status(201).json(cliente);
   } catch (error) {
