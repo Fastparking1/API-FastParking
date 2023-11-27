@@ -28,8 +28,7 @@ const Cliente = sequelize.define('Cliente', {
   numero: DataTypes.STRING,
   complemento: DataTypes.STRING,
   senha: DataTypes.STRING,
-  confirmacao: DataTypes.STRING,
-  nome_empresa: DataTypes.STRING
+  confirmacao: DataTypes.STRING
 });
 
 app.post('/cadastro-cliente', async (req, res) => {
@@ -49,8 +48,7 @@ app.post('/cadastro-cliente', async (req, res) => {
       numero: req.body.numero,
       complemento: req.body.complemento,
       senha: req.body.senha, 
-      confirmacao: req.body.confirmacao,
-      nome_empresa: DataTypes.STRING
+      confirmacao: req.body.confirmacao
     });
     res.status(201).json(cliente);
   } catch (error) {
@@ -107,7 +105,6 @@ app.put('/atualizar-dados/:id', async (req, res) => {
     // Atualize apenas o email, cnpj e nome_empresa
     cliente.email = req.body.email || cliente.email;
     cliente.cnpj = req.body.cnpj || cliente.cnpj;
-    cliente.nome_empresa = req.body.nome_empresa || cliente.nome_empresa;
 
     await cliente.save();
 
