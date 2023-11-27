@@ -56,11 +56,13 @@ app.post('/cadastro-cliente', async (req, res) => {
   }
 });
 
+// Alteração no endpoint /login
 app.post('/login', async (req, res) => {
   const { email, senha } = req.body;
   const cliente = await Cliente.findOne({ where: { email } });
+
   if (cliente && cliente.senha === senha) {
-    res.status(200).json({ message: 'Login bem-sucedido' });
+    res.status(200).json({ message: 'Login bem-sucedido', cliente });
   } else {
     res.status(401).json({ error: 'Credenciais inválidas' });
   }
