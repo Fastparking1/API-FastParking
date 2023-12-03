@@ -118,6 +118,21 @@ app.put('/atualizar-dados', async (req, res) => {
   }
 });
 
+app.get('/detalhes-usuario/:id', async (req, res) => {
+  const userId = req.params.id;
+
+  try {
+    const usuario = await Cliente.findByPk(userId);
+
+    if (!usuario) {
+      return res.status(404).json({ error: 'Usuário não encontrado' });
+    }
+
+    res.status(200).json(usuario);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao buscar detalhes do usuário' });
+  }
+});
 
 app.listen(port, () => {
   console.log(`API rodando na porta ${port}`);
