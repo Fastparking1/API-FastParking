@@ -108,6 +108,9 @@ app.put('/atualizar-dados', async (req, res) => {
     // Atualize os dados do cliente
     cliente.email = req.body.email || cliente.email;
     cliente.cnpj = req.body.cnpj || cliente.cnpj;
+    cliente.senha = req.body.senha || cliente.senha;
+    cliente.confirmacao = req.body.confirmacao || cliente.confirmacao;
+    cliente.nome = req.body.nome || cliente.nome;
 
     await cliente.save();
 
