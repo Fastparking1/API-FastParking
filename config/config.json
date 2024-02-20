@@ -1,14 +1,14 @@
 {
   "development": {
-    "url": "postgres://fastparkingdb_user:GMd30d1dDUJg1bMgomf8uU6xSLj2yR4X@dpg-cl53fo472pts739qnll0-a/fastparkingdb",
+    "url": "postgres://fastparkingbd_user:eXxzEiuwmS5jyi1hJj72i7KeMW1xSQDH@dpg-cnad6oa1hbls73djta80-a/fastparkingbd",
     "dialect": "postgres"
   },
   "test": {
-    "url": "postgres://fastparkingdb_user:GMd30d1dDUJg1bMgomf8uU6xSLj2yR4X@dpg-cl53fo472pts739qnll0-a/fastparkingdb",
+    "url": "postgres://fastparkingbd_user:eXxzEiuwmS5jyi1hJj72i7KeMW1xSQDH@dpg-cnad6oa1hbls73djta80-a/fastparkingbdb",
     "dialect": "postgres"
   },
   "production": {
-    "url": "postgres://fastparkingdb_user:GMd30d1dDUJg1bMgomf8uU6xSLj2yR4X@dpg-cl53fo472pts739qnll0-a/fastparkingdb",
+    "url": "postgres://fastparkingbd_user:eXxzEiuwmS5jyi1hJj72i7KeMW1xSQDH@dpg-cnad6oa1hbls73djta80-a/fastparkingbd",
     "dialect": "postgres"
   }
 }
